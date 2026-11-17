@@ -8,6 +8,9 @@ from .harness import Harness
 
 
 def run(h: Harness = None, quiet: bool = False) -> dict:
+    if not quiet:
+        from .cli import configure_stdio
+        configure_stdio()
     h = h or Harness()
     site = "demo_clinic"
     admin = Actor(id="admin_1", site=site, role="admin")

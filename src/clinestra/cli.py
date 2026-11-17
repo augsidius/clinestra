@@ -71,6 +71,37 @@ class Stop(Exception):
         self.code = code
 
 
+def configure_stdio() -> None:
+    """Keep the CLI from crashing when the console encoding is not UTF-8.
+
+    Windows pipes and the legacy console use cp1252. ``clinestra demo`` prints
+    box-drawing characters and arrows, and those raise UnicodeEncodeError on
+    that encoding. Switch the stream to UTF-8 when it cannot hold them, and
+    substitute any character it still cannot encode.
+    """
+    sample = "── →"
+    for stream in (sys.stdout, sys.stderr):
+        if stream is None:
+            continue
+        encoding = getattr(stream, "encoding", None) or ""
+        try:
+            sample.encode(encoding or "utf-8")
+        except (LookupError, UnicodeEncodeError):
+            pass
+        else:
+            continue
+        reconfigure = getattr(stream, "reconfigure", None)
+        if reconfigure is None:
+            continue
+        try:
+            reconfigure(encoding="utf-8", errors="replace")
+        except (AttributeError, OSError, ValueError):
+            try:
+                reconfigure(errors="replace")
+            except (AttributeError, OSError, ValueError):
+                pass
+
+
 def redact_url(text) -> str:
     """Hide passwords in connection strings wherever they appear, including in driver error messages."""
     out = re.sub(r"(://[^:/@\s]*:)[^@\s]*(@)", r"\1***\2", str(text))
@@ -1107,6 +1138,7 @@ exit codes: 0 success, 1 a check or action failed, 2 usage or missing configurat
 
 
 def main(argv=None):
+    configure_stdio()
     args = _build_parser().parse_args(argv)
     from .errors import ClinestraError
     try:

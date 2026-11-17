@@ -1,13 +1,12 @@
 # Changelog
 
-## Unreleased
+## 0.3.0
 
 - Records made from a `cohort_key`, `protocol_key` or `plugin_key` now store `definition_id` and `definition_version`. Previously only records created with `definition_key` did.
 - Cohort entry and exit actions use the definition version the patient enrolled under, even if it has been retired. Records with no stored version still use the latest.
 - In production mode, those same records now require a clinically approved definition, as `definition_key` records already did.
-
-## 0.3.0
-
+- `clinestra demo` no longer crashes on a Windows console that is not UTF-8.
+- `LICENSE` contains the full GNU AGPL v3 text.
 - Removed the `care_model` concept, its provider interface and its routes. Concepts are now 31.
 - The MDD pack is no longer installed. It lives in `examples/packs/mdd`; load it by path. The default packs are `core` only.
 - `CLINESTRA_ADMIN_ALL_ROLES` is off by default, so an admin no longer acts as a clinician unless it is set to `1`.

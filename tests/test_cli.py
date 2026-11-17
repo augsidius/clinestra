@@ -1,4 +1,9 @@
+import io
 import json
+import os
+import subprocess
+import sys
+from pathlib import Path
 
 import pytest
 
@@ -51,6 +56,36 @@ def test_audit_verify_detects_tampering(tmp_path, capsys):
 def test_errors_are_clean(capsys):
     assert main(["concepts", "nope"]) == 1
     assert "Unknown concept" in capsys.readouterr().err
+
+
+def test_demo_survives_a_cp1252_console(monkeypatch):
+    buf = io.BytesIO()
+    stream = io.TextIOWrapper(buf, encoding="cp1252", errors="strict", line_buffering=True)
+    monkeypatch.setattr(sys, "stdout", stream)
+    monkeypatch.setattr(sys, "stderr", stream)
+    assert main(["demo"]) == 0
+    stream.flush()
+    text = buf.getvalue().decode("utf-8")
+    assert "People" in text
+    assert "Timeline valid" in text
+
+
+def test_demo_cli_survives_cp1252_subprocess():
+    env = os.environ.copy()
+    env["PYTHONUTF8"] = "0"
+    env["PYTHONIOENCODING"] = "cp1252:strict"
+    root = Path(__file__).resolve().parents[1]
+    env["PYTHONPATH"] = str(root / "src") + os.pathsep + env.get("PYTHONPATH", "")
+    proc = subprocess.run([sys.executable, "-m", "clinestra.cli", "demo"], capture_output=True, env=env, cwd=root)
+    assert proc.returncode == 0, proc.stderr.decode("utf-8", "replace")
+    assert "People" in proc.stdout.decode("utf-8")
+
+
+def test_license_is_the_full_agpl():
+    text = (Path(__file__).resolve().parents[1] / "LICENSE").read_text(encoding="utf-8")
+    assert "GNU AFFERO GENERAL PUBLIC LICENSE" in text
+    assert "Version 3, 19 November 2007" in text
+    assert "Copyright (C) the Clinestra contributors" in text
 
 
 # ── setup commands ──
