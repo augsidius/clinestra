@@ -363,7 +363,7 @@ curl -X POST localhost:8000/v1/definitions -H 'Authorization: Bearer <admin key>
 
 ### 5. Share it on Clinestra Hub
 
-For content you want other care providers to install, Clinestra Hub uses a signed pack format, `clinestra.pack/v1`. You write YAML; Hub validates every coded concept, runs the pack's evals, signs the result and publishes it. See [Clinestra Hub](https://github.com/clinestra/hub).
+For content you want other care providers to install, Clinestra Hub uses a signed pack format, `clinestra.pack/v1`. You write YAML; Hub validates every coded concept, runs the pack's evals, signs the result and publishes it. Hub is not public yet.
 
 ## The clinical engine
 

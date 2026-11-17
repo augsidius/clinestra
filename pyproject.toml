@@ -32,6 +32,12 @@ full = ["clinestra[server,ai,postgres]"]
 all = ["clinestra[full]"]
 dev = ["clinestra[full,test]", "build>=1", "twine>=5"]
 
+[project.urls]
+Homepage = "https://github.com/augsidius/clinestra"
+Source = "https://github.com/augsidius/clinestra"
+Issues = "https://github.com/augsidius/clinestra/issues"
+Changelog = "https://github.com/augsidius/clinestra/blob/main/CHANGELOG.md"
+
 [project.scripts]
 clinestra = "clinestra.cli:main"
 
