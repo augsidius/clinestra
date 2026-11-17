@@ -50,6 +50,7 @@ jobs:
       - uses: pypa/gh-action-pypi-publish@release/v1
         with:
           repository-url: https://test.pypi.org/legacy/
+          skip-existing: true
 
   verify:
     needs: [build, testpypi]
@@ -67,15 +68,18 @@ jobs:
             sleep 10
           done
           exit 1
+      # Only clinestra comes from TestPyPI; its dependencies come from PyPI, so squatted copies on TestPyPI are never used.
+      - name: Download the release from TestPyPI
+        run: pip download --no-deps --index-url https://test.pypi.org/simple/ "clinestra==$VERSION" -d pkg
       - name: Check the core install
         run: |
           python -m venv core
-          core/bin/pip install --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple/ "clinestra==$VERSION"
+          core/bin/pip install pkg/clinestra-$VERSION-py3-none-any.whl
           core/bin/clinestra demo
       - name: Check the full install
         run: |
           python -m venv full
-          full/bin/pip install --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple/ "clinestra[full]==$VERSION"
+          full/bin/pip install "pkg/clinestra-$VERSION-py3-none-any.whl[full]"
           full/bin/clinestra demo
           full/bin/python -c "from clinestra import Harness; from clinestra.server import create_app, APIKeyAuth; create_app(Harness(), APIKeyAuth({}))"
 
