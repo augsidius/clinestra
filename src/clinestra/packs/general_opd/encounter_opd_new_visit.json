@@ -1,0 +1,19 @@
+{
+  "def_kind": "encounter",
+  "key": "opd_new_visit",
+  "version": 1,
+  "name": "New OPD visit",
+  "config": {
+    "encounter_type": "opd_visit",
+    "defaults": {
+      "encounter_type": "opd_visit",
+      "duration_min": 20
+    },
+    "note_pages": [
+      "opd_triage",
+      "opd_consultation"
+    ],
+    "workflow": "opd_visit_flow",
+    "default_duration_min": 20
+  }
+}

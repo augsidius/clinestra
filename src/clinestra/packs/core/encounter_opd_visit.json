@@ -1,0 +1,17 @@
+{
+  "def_kind": "encounter",
+  "key": "opd_visit",
+  "version": 1,
+  "name": "OPD visit",
+  "config": {
+    "encounter_type": "opd_visit",
+    "default_duration_min": 15,
+    "defaults": {
+      "encounter_type": "opd_visit",
+      "duration_min": 15
+    },
+    "note_pages": [
+      "general_case_sheet"
+    ]
+  }
+}

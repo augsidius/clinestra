@@ -1,0 +1,16 @@
+{
+  "def_kind": "conversation",
+  "key": "general_assistant",
+  "version": 1,
+  "name": "General assistant",
+  "config": {
+    "actor_role": "clinician",
+    "scope": "general",
+    "structure": {
+      "tools": [
+        "fetch_evidence",
+        "generate_definition"
+      ]
+    }
+  }
+}

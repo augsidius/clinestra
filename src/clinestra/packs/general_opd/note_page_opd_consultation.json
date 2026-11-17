@@ -1,0 +1,48 @@
+{
+  "def_kind": "note_page",
+  "key": "opd_consultation",
+  "version": 1,
+  "name": "OPD consultation",
+  "config": {
+    "page_type": "case_sheet",
+    "blocks": [
+      {
+        "key": "chief_complaint",
+        "label": "Chief complaint",
+        "input_type": "narrative",
+        "required": true
+      },
+      {
+        "key": "history",
+        "label": "History of present illness",
+        "input_type": "narrative"
+      },
+      {
+        "key": "past_history",
+        "label": "Past medical history",
+        "input_type": "narrative"
+      },
+      {
+        "key": "allergies",
+        "label": "Allergies",
+        "input_type": "free_text"
+      },
+      {
+        "key": "examination",
+        "label": "Examination",
+        "input_type": "narrative"
+      },
+      {
+        "key": "assessment_plan",
+        "label": "Assessment and plan",
+        "input_type": "narrative",
+        "required": true
+      },
+      {
+        "key": "follow_up",
+        "label": "Follow-up",
+        "input_type": "free_text"
+      }
+    ]
+  }
+}

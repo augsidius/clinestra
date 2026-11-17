@@ -1,0 +1,15 @@
+{
+  "def_kind": "journal_plugin",
+  "key": "medication_taken",
+  "version": 1,
+  "name": "Medication taken",
+  "config": {
+    "fields": [
+      {
+        "key": "taken",
+        "label": "Taken today",
+        "field_type": "boolean"
+      }
+    ]
+  }
+}

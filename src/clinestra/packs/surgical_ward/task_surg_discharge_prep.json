@@ -1,0 +1,26 @@
+{
+  "def_kind": "task",
+  "key": "surg_discharge_prep",
+  "version": 1,
+  "name": "Discharge preparation",
+  "config": {
+    "defaults": {
+      "title": "Discharge preparation",
+      "assignee_role": "coordinator",
+      "checklist": [
+        {
+          "item": "Medicines explained"
+        },
+        {
+          "item": "Wound care explained"
+        },
+        {
+          "item": "Follow-up booked"
+        },
+        {
+          "item": "Summary given to patient"
+        }
+      ]
+    }
+  }
+}

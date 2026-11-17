@@ -1,0 +1,17 @@
+{
+  "def_kind": "routine",
+  "key": "surg_wound_check",
+  "version": 1,
+  "name": "Wound inspection",
+  "config": {
+    "defaults": {
+      "title": "Wound inspection",
+      "assignee_role": "ward_nurse",
+      "schedule": {
+        "every_days": 1,
+        "grace_days": 0
+      },
+      "duty_state": "on_shift"
+    }
+  }
+}

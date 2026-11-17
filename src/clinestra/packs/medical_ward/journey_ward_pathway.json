@@ -1,0 +1,80 @@
+{
+  "def_kind": "journey",
+  "key": "ward_pathway",
+  "version": 1,
+  "name": "Ward pathway",
+  "config": {
+    "states": [
+      "admitted",
+      "under_care",
+      "discharge_planning",
+      "discharged"
+    ],
+    "initial": "admitted",
+    "terminal": [
+      "discharged"
+    ],
+    "association_type": "encounter",
+    "transitions": {
+      "admitted": [
+        "under_care"
+      ],
+      "under_care": [
+        "discharge_planning"
+      ],
+      "discharge_planning": [
+        "discharged"
+      ]
+    },
+    "stages": {
+      "admitted": {
+        "label": "Admitted",
+        "category": "todo"
+      },
+      "under_care": {
+        "label": "Under care",
+        "category": "in_progress"
+      },
+      "discharge_planning": {
+        "label": "Discharge planning",
+        "category": "in_progress"
+      },
+      "discharged": {
+        "label": "Discharged",
+        "category": "done"
+      }
+    },
+    "requires": {
+      "admitted": [
+        {
+          "kind": "note_page",
+          "state": "finalized",
+          "definition_key": "ward_admission",
+          "label": "Admission note finalized"
+        }
+      ],
+      "discharge_planning": [
+        {
+          "kind": "note_page",
+          "state": "finalized",
+          "definition_key": "ward_discharge",
+          "label": "Discharge summary finalized"
+        }
+      ]
+    },
+    "advance_on": [
+      {
+        "when_kind": "note_page",
+        "when_state": "finalized",
+        "definition_key": "ward_admission",
+        "to": "under_care"
+      },
+      {
+        "when_kind": "note_page",
+        "when_state": "finalized",
+        "definition_key": "ward_discharge",
+        "to": "discharged"
+      }
+    ]
+  }
+}

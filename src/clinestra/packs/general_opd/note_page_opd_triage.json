@@ -1,0 +1,83 @@
+{
+  "def_kind": "note_page",
+  "key": "opd_triage",
+  "version": 1,
+  "name": "OPD vitals and triage",
+  "config": {
+    "page_type": "case_sheet",
+    "blocks": [
+      {
+        "key": "bp_systolic",
+        "label": "BP systolic",
+        "input_type": "number",
+        "observation_code": "bp_systolic",
+        "unit": "mmHg"
+      },
+      {
+        "key": "bp_diastolic",
+        "label": "BP diastolic",
+        "input_type": "number",
+        "observation_code": "bp_diastolic",
+        "unit": "mmHg"
+      },
+      {
+        "key": "pulse",
+        "label": "Pulse",
+        "input_type": "number",
+        "observation_code": "pulse",
+        "unit": "/min"
+      },
+      {
+        "key": "temperature",
+        "label": "Temperature",
+        "input_type": "number",
+        "observation_code": "temperature",
+        "unit": "°C"
+      },
+      {
+        "key": "resp_rate",
+        "label": "Respiratory rate",
+        "input_type": "number",
+        "observation_code": "resp_rate",
+        "unit": "/min"
+      },
+      {
+        "key": "spo2",
+        "label": "SpO2",
+        "input_type": "number",
+        "observation_code": "spo2",
+        "unit": "%"
+      },
+      {
+        "key": "weight",
+        "label": "Weight",
+        "input_type": "number",
+        "observation_code": "weight",
+        "unit": "kg"
+      },
+      {
+        "key": "height",
+        "label": "Height",
+        "input_type": "number",
+        "observation_code": "height",
+        "unit": "cm"
+      },
+      {
+        "key": "visit_priority",
+        "label": "Queue priority",
+        "input_type": "choice",
+        "options": [
+          "routine",
+          "priority",
+          "urgent"
+        ],
+        "required": true
+      },
+      {
+        "key": "triage_note",
+        "label": "Nursing note",
+        "input_type": "narrative"
+      }
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "def_kind": "encounter",
+  "key": "surg_admission_episode",
+  "version": 1,
+  "name": "Surgical admission",
+  "config": {
+    "encounter_type": "admission",
+    "defaults": {
+      "encounter_type": "admission"
+    },
+    "note_pages": [
+      "surg_admission",
+      "surg_preop",
+      "surg_checklist",
+      "surg_operative",
+      "surg_postop_obs",
+      "surg_discharge"
+    ],
+    "workflow": "surg_pathway"
+  }
+}

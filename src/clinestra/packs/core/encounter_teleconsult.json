@@ -1,0 +1,13 @@
+{
+  "def_kind": "encounter",
+  "key": "teleconsult",
+  "version": 1,
+  "name": "Teleconsult",
+  "config": {
+    "encounter_type": "teleconsult",
+    "defaults": {
+      "encounter_type": "teleconsult",
+      "duration_min": 10
+    }
+  }
+}

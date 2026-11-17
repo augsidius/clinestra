@@ -1,0 +1,11 @@
+{
+  "def_kind": "clinical_document",
+  "key": "consent_form",
+  "version": 1,
+  "name": "Consent form",
+  "config": {
+    "doc_type": "consent_form",
+    "protected": true,
+    "body_template": "<h1>Consent</h1><p>I, {patient_name}, consent to the following.</p>"
+  }
+}

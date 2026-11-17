@@ -1,0 +1,46 @@
+{
+  "def_kind": "care_team",
+  "key": "opd_team",
+  "version": 1,
+  "name": "OPD team",
+  "config": {
+    "roles": [
+      {
+        "key": "primary",
+        "label": "Treating doctor",
+        "person_kind": "provider",
+        "max": 1
+      },
+      {
+        "key": "consultant",
+        "label": "Consultant",
+        "person_kind": "provider"
+      },
+      {
+        "key": "nurse",
+        "label": "OPD nurse",
+        "person_kind": "care_team_member",
+        "skills": [
+          "vitals"
+        ]
+      },
+      {
+        "key": "front_desk",
+        "label": "Front desk",
+        "person_kind": "care_team_member",
+        "skills": [
+          "registration",
+          "scheduling"
+        ]
+      },
+      {
+        "key": "coordinator",
+        "label": "Care coordinator",
+        "person_kind": "care_team_member",
+        "skills": [
+          "follow_up"
+        ]
+      }
+    ]
+  }
+}

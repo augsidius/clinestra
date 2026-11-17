@@ -1,0 +1,139 @@
+{
+  "def_kind": "journey",
+  "key": "surg_pathway",
+  "version": 1,
+  "name": "Surgical pathway",
+  "config": {
+    "states": [
+      "admitted",
+      "pre_op",
+      "ready_for_theatre",
+      "in_theatre",
+      "post_op_ward",
+      "discharge_planning",
+      "discharged"
+    ],
+    "initial": "admitted",
+    "terminal": [
+      "discharged"
+    ],
+    "association_type": "encounter",
+    "transitions": {
+      "admitted": [
+        "pre_op"
+      ],
+      "pre_op": [
+        "ready_for_theatre"
+      ],
+      "ready_for_theatre": [
+        "in_theatre"
+      ],
+      "in_theatre": [
+        "post_op_ward"
+      ],
+      "post_op_ward": [
+        "discharge_planning"
+      ],
+      "discharge_planning": [
+        "discharged"
+      ]
+    },
+    "stages": {
+      "admitted": {
+        "label": "Admitted",
+        "category": "todo"
+      },
+      "pre_op": {
+        "label": "Pre-operative",
+        "category": "in_progress"
+      },
+      "ready_for_theatre": {
+        "label": "Ready for theatre",
+        "category": "in_progress"
+      },
+      "in_theatre": {
+        "label": "In theatre",
+        "category": "in_progress"
+      },
+      "post_op_ward": {
+        "label": "Post-operative ward",
+        "category": "in_progress"
+      },
+      "discharge_planning": {
+        "label": "Discharge planning",
+        "category": "in_progress"
+      },
+      "discharged": {
+        "label": "Discharged",
+        "category": "done"
+      }
+    },
+    "requires": {
+      "admitted": [
+        {
+          "kind": "note_page",
+          "state": "finalized",
+          "definition_key": "surg_admission",
+          "label": "Admission note finalized"
+        }
+      ],
+      "pre_op": [
+        {
+          "kind": "note_page",
+          "state": "finalized",
+          "definition_key": "surg_preop",
+          "label": "Pre-operative assessment finalized"
+        }
+      ],
+      "ready_for_theatre": [],
+      "in_theatre": [
+        {
+          "kind": "note_page",
+          "state": "finalized",
+          "definition_key": "surg_checklist",
+          "label": "Safety checklist finalized"
+        },
+        {
+          "kind": "note_page",
+          "state": "finalized",
+          "definition_key": "surg_operative",
+          "label": "Operative note finalized"
+        }
+      ],
+      "discharge_planning": [
+        {
+          "kind": "note_page",
+          "state": "finalized",
+          "definition_key": "surg_discharge",
+          "label": "Discharge summary finalized"
+        }
+      ]
+    },
+    "advance_on": [
+      {
+        "when_kind": "note_page",
+        "when_state": "finalized",
+        "definition_key": "surg_admission",
+        "to": "pre_op"
+      },
+      {
+        "when_kind": "note_page",
+        "when_state": "finalized",
+        "definition_key": "surg_preop",
+        "to": "ready_for_theatre"
+      },
+      {
+        "when_kind": "note_page",
+        "when_state": "finalized",
+        "definition_key": "surg_operative",
+        "to": "post_op_ward"
+      },
+      {
+        "when_kind": "note_page",
+        "when_state": "finalized",
+        "definition_key": "surg_discharge",
+        "to": "discharged"
+      }
+    ]
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "pack_id": "core",
+  "name": "Core definitions",
+  "version": "0.2.0",
+  "publisher": "Clinestra",
+  "licence": "Same as the library",
+  "definitions": [
+    "health_profile_general.json",
+    "health_profile_surgery.json",
+    "care_team_standard.json",
+    "encounter_opd_visit.json",
+    "encounter_teleconsult.json",
+    "note_page_general_case_sheet.json",
+    "note_page_vitals_chart.json",
+    "clinical_document_prescription.json",
+    "clinical_document_clinical_report.json",
+    "clinical_document_consent_form.json",
+    "clinical_setting_clinic.json",
+    "journal_plugin_vitals_log.json",
+    "journal_plugin_medication_taken.json",
+    "assessment_bmi.json",
+    "routine_ward_vitals.json",
+    "task_follow_up_call.json",
+    "journey_opd_flow.json",
+    "careplan_hypertension_basic.json",
+    "conversation_clinician_copilot.json",
+    "conversation_patient_coach.json",
+    "conversation_general_assistant.json",
+    "reaction_outcome_achieved_task.json"
+  ]
+}

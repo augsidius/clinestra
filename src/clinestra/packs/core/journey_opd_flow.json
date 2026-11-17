@@ -1,0 +1,35 @@
+{
+  "def_kind": "journey",
+  "key": "opd_flow",
+  "version": 1,
+  "name": "OPD flow",
+  "config": {
+    "states": [
+      "registered",
+      "waiting",
+      "in_consult",
+      "billing",
+      "done"
+    ],
+    "initial": "registered",
+    "transitions": {
+      "registered": [
+        "waiting"
+      ],
+      "waiting": [
+        "in_consult"
+      ],
+      "in_consult": [
+        "billing",
+        "waiting"
+      ],
+      "billing": [
+        "done"
+      ]
+    },
+    "terminal": [
+      "done"
+    ],
+    "association_type": "encounter"
+  }
+}

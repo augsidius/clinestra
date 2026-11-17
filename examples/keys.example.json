@@ -1,0 +1,5 @@
+{
+  "dev-clinician-key": {"id": "dr_rao", "site": "clinic_1", "role": "clinician"},
+  "dev-nurse-key": {"id": "nurse_meena", "site": "clinic_1", "role": "nurse"},
+  "dev-assistant-key": {"id": "assistant", "site": "clinic_1", "role": "clinician", "actor_type": "agent"}
+}

@@ -1,0 +1,10 @@
+{
+  "def_kind": "clinical_document",
+  "key": "opd_visit_summary",
+  "version": 1,
+  "name": "Visit summary",
+  "config": {
+    "doc_type": "clinical_report",
+    "shareable_with_patient": true
+  }
+}

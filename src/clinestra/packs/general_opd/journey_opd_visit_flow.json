@@ -1,0 +1,96 @@
+{
+  "def_kind": "journey",
+  "key": "opd_visit_flow",
+  "version": 1,
+  "name": "OPD visit flow",
+  "config": {
+    "states": [
+      "checked_in",
+      "vitals",
+      "waiting_doctor",
+      "in_consultation",
+      "checkout",
+      "completed"
+    ],
+    "initial": "checked_in",
+    "terminal": [
+      "completed"
+    ],
+    "association_type": "encounter",
+    "transitions": {
+      "checked_in": [
+        "vitals"
+      ],
+      "vitals": [
+        "waiting_doctor"
+      ],
+      "waiting_doctor": [
+        "in_consultation"
+      ],
+      "in_consultation": [
+        "checkout"
+      ],
+      "checkout": [
+        "completed"
+      ]
+    },
+    "stages": {
+      "checked_in": {
+        "label": "Checked in",
+        "category": "todo"
+      },
+      "vitals": {
+        "label": "Vitals",
+        "category": "in_progress"
+      },
+      "waiting_doctor": {
+        "label": "Waiting for doctor",
+        "category": "in_progress"
+      },
+      "in_consultation": {
+        "label": "In consultation",
+        "category": "in_progress"
+      },
+      "checkout": {
+        "label": "Checkout",
+        "category": "in_progress"
+      },
+      "completed": {
+        "label": "Completed",
+        "category": "done"
+      }
+    },
+    "requires": {
+      "vitals": [
+        {
+          "kind": "note_page",
+          "state": "finalized",
+          "definition_key": "opd_triage",
+          "label": "Vitals and triage finalized"
+        }
+      ],
+      "in_consultation": [
+        {
+          "kind": "note_page",
+          "state": "finalized",
+          "definition_key": "opd_consultation",
+          "label": "Consultation finalized"
+        }
+      ]
+    },
+    "advance_on": [
+      {
+        "when_kind": "note_page",
+        "when_state": "finalized",
+        "definition_key": "opd_triage",
+        "to": "waiting_doctor"
+      },
+      {
+        "when_kind": "note_page",
+        "when_state": "finalized",
+        "definition_key": "opd_consultation",
+        "to": "checkout"
+      }
+    ]
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "def_kind": "clinical_setting",
+  "key": "home_service",
+  "version": 1,
+  "name": "Home care service",
+  "config": {
+    "defaults": {
+      "name": "Home care service",
+      "setting_type": "home",
+      "services": [
+        "home_visit",
+        "vitals",
+        "dressing"
+      ],
+      "flags": {
+        "accepts_referrals": true
+      }
+    }
+  }
+}

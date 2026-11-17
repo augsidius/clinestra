@@ -1,0 +1,28 @@
+{
+  "def_kind": "journal_plugin",
+  "key": "vitals_log",
+  "version": 1,
+  "name": "Home vitals",
+  "config": {
+    "fields": [
+      {
+        "key": "bp_systolic",
+        "label": "BP systolic",
+        "observation_code": "bp_systolic",
+        "unit": "mmHg"
+      },
+      {
+        "key": "bp_diastolic",
+        "label": "BP diastolic",
+        "observation_code": "bp_diastolic",
+        "unit": "mmHg"
+      },
+      {
+        "key": "weight",
+        "label": "Weight",
+        "observation_code": "weight",
+        "unit": "kg"
+      }
+    ]
+  }
+}

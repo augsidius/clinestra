@@ -1,0 +1,28 @@
+{
+  "pack_id": "surgical_ward",
+  "name": "Surgical Ward Management",
+  "description": "Elective surgical admissions from admission to discharge.",
+  "version": "0.1.0",
+  "publisher": "Clinestra",
+  "licence": "Same as the library",
+  "clinical_review": "Not clinically reviewed. Review before use with patients.",
+  "definitions": [
+    "care_team_surg_team.json",
+    "clinical_setting_surg_ward_unit.json",
+    "health_profile_surg_periop.json",
+    "note_page_surg_admission.json",
+    "note_page_surg_preop.json",
+    "note_page_surg_checklist.json",
+    "note_page_surg_operative.json",
+    "note_page_surg_postop_obs.json",
+    "note_page_surg_discharge.json",
+    "encounter_surg_admission_episode.json",
+    "journey_surg_pathway.json",
+    "routine_surg_obs_round.json",
+    "routine_surg_wound_check.json",
+    "task_surg_preop_prep.json",
+    "task_surg_discharge_prep.json",
+    "task_surg_post_discharge_call.json",
+    "clinical_document_surg_discharge_letter.json"
+  ]
+}

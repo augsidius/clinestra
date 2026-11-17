@@ -1,0 +1,16 @@
+{
+  "def_kind": "routine",
+  "key": "home_visit_planning",
+  "version": 1,
+  "name": "Plan home visits",
+  "config": {
+    "defaults": {
+      "title": "Plan home visits",
+      "assignee_role": "coordinator",
+      "schedule": {
+        "every_days": 1,
+        "grace_days": 0
+      }
+    }
+  }
+}

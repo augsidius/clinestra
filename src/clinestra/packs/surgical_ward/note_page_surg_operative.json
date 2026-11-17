@@ -1,0 +1,51 @@
+{
+  "def_kind": "note_page",
+  "key": "surg_operative",
+  "version": 1,
+  "name": "Operative note",
+  "config": {
+    "page_type": "case_sheet",
+    "blocks": [
+      {
+        "key": "procedure_performed",
+        "label": "Procedure performed",
+        "input_type": "free_text",
+        "required": true
+      },
+      {
+        "key": "surgeon",
+        "label": "Surgeon",
+        "input_type": "free_text",
+        "required": true
+      },
+      {
+        "key": "anaesthetist_name",
+        "label": "Anaesthetist",
+        "input_type": "free_text"
+      },
+      {
+        "key": "findings",
+        "label": "Findings",
+        "input_type": "narrative",
+        "required": true
+      },
+      {
+        "key": "operative_details",
+        "label": "Operative details",
+        "input_type": "narrative",
+        "required": true
+      },
+      {
+        "key": "estimated_blood_loss",
+        "label": "Estimated blood loss",
+        "input_type": "free_text"
+      },
+      {
+        "key": "postop_orders",
+        "label": "Post-operative instructions",
+        "input_type": "narrative",
+        "required": true
+      }
+    ]
+  }
+}

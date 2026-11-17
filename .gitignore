@@ -1,0 +1,37 @@
+# Data and databases
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite3
+
+# Keys and secrets
+*.key
+*.pem
+keys.json
+LOGINS*.md
+.env
+.env.*
+!.env.example
+
+# Virtual environments
+.venv/
+.venv-*/
+venv/
+env/
+
+# Build output
+dist/
+build/
+*.egg-info/
+*.whl
+*.tar.gz
+
+# Caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/

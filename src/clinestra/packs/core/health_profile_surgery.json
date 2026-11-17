@@ -1,0 +1,19 @@
+{
+  "def_kind": "health_profile",
+  "key": "surgery",
+  "version": 1,
+  "name": "Surgery (peri-operative)",
+  "config": {
+    "profile_type": "episode",
+    "ttl_days": 30,
+    "tags": {
+      "measurements": [
+        "hb",
+        "inr",
+        "pain_score",
+        "temperature",
+        "wound_status"
+      ]
+    }
+  }
+}

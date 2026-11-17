@@ -1,0 +1,85 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        python: ["3.9", "3.10", "3.11", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - run: python -m pip install -e ".[dev]"
+      - run: python -m pytest -q
+
+  clean-install:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Build
+        run: |
+          python -m pip install build
+          python -m build -o dist .
+      - name: Core has no server or AI dependencies
+        working-directory: ${{ runner.temp }}
+        env:
+          PYTHONUTF8: "1"
+        run: |
+          python -m venv core
+          core/bin/pip install "$(ls $GITHUB_WORKSPACE/dist/*.whl)"
+          core/bin/python -c "
+          import importlib.util as u
+          assert u.find_spec('fastapi') is None and u.find_spec('anthropic') is None
+          from clinestra import Harness
+          assert sorted(Harness().packs) == ['core']
+          "
+          core/bin/clinestra demo
+      - name: Full mounts the API and AI routes
+        working-directory: ${{ runner.temp }}
+        env:
+          PYTHONUTF8: "1"
+        run: |
+          python -m venv full
+          full/bin/pip install "$(ls $GITHUB_WORKSPACE/dist/*.whl)[full]"
+          full/bin/python -c "
+          from clinestra import Harness
+          from clinestra.server import APIKeyAuth, create_app
+          paths = create_app(Harness(), APIKeyAuth({})).openapi()['paths']
+          for prefix in ('/v1/ai', '/v1/admin', '/v1/portal'):
+              assert any(p.startswith(prefix) for p in paths), prefix
+          "
+          full/bin/clinestra demo
+
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install ".[full]" pip-audit
+      - run: pip-audit --skip-editable
+
+  secrets:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

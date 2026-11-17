@@ -1,0 +1,56 @@
+{
+  "def_kind": "note_page",
+  "key": "mdd_case_sheet",
+  "version": 1,
+  "name": "MDD case sheet",
+  "config": {
+    "page_type": "case_sheet",
+    "blocks": [
+      {
+        "key": "mood_and_affect_narrative",
+        "label": "Mood and affect",
+        "input_type": "narrative",
+        "required": true
+      },
+      {
+        "key": "anhedonia_duration",
+        "label": "Anhedonia duration",
+        "input_type": "free_text",
+        "required": false
+      },
+      {
+        "key": "sleep_appetite_change",
+        "label": "Sleep/appetite change",
+        "input_type": "free_text",
+        "required": false
+      },
+      {
+        "key": "suicidal_ideation_screen",
+        "label": "Suicidal ideation screen",
+        "input_type": "structured_pick",
+        "required": true
+      },
+      {
+        "key": "functional_impairment_domains",
+        "label": "Functional impairment domains",
+        "input_type": "free_text",
+        "required": false
+      },
+      {
+        "key": "prior_episode_history",
+        "label": "Prior episode history",
+        "input_type": "narrative",
+        "required": false
+      },
+      {
+        "key": "phq9_clinician_entered",
+        "label": "PHQ-9 (if done on paper)",
+        "input_type": "number",
+        "observation_code": "phq9_score"
+      }
+    ],
+    "exports_to": [
+      "prescription"
+    ]
+  }
+}

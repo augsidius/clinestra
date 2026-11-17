@@ -1,0 +1,10 @@
+{
+  "def_kind": "clinical_document",
+  "key": "ward_discharge_letter",
+  "version": 1,
+  "name": "Discharge letter",
+  "config": {
+    "doc_type": "clinical_report",
+    "shareable_with_patient": true
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "def_kind": "clinical_setting",
+  "key": "ward_unit",
+  "version": 1,
+  "name": "Medical ward",
+  "config": {
+    "defaults": {
+      "name": "Medical ward",
+      "setting_type": "ipd",
+      "services": [
+        "admission",
+        "nursing_care",
+        "medication_administration"
+      ],
+      "flags": {
+        "accepts_referrals": true
+      }
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "def_kind": "note_page",
+  "key": "ward_admission",
+  "version": 1,
+  "name": "Admission note",
+  "config": {
+    "page_type": "case_sheet",
+    "blocks": [
+      {
+        "key": "reason_for_admission",
+        "label": "Reason for admission",
+        "input_type": "narrative",
+        "required": true
+      },
+      {
+        "key": "history",
+        "label": "History",
+        "input_type": "narrative",
+        "required": true
+      },
+      {
+        "key": "allergies",
+        "label": "Allergies",
+        "input_type": "free_text",
+        "required": true
+      },
+      {
+        "key": "examination",
+        "label": "Examination",
+        "input_type": "narrative"
+      },
+      {
+        "key": "initial_plan",
+        "label": "Initial plan",
+        "input_type": "narrative",
+        "required": true
+      }
+    ]
+  }
+}

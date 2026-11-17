@@ -1,0 +1,17 @@
+{
+  "def_kind": "routine",
+  "key": "ward_doctor_round",
+  "version": 1,
+  "name": "Doctor's ward round",
+  "config": {
+    "defaults": {
+      "title": "Doctor's ward round",
+      "assignee_role": "resident",
+      "schedule": {
+        "every_days": 1,
+        "grace_days": 0
+      },
+      "duty_state": "on_shift"
+    }
+  }
+}

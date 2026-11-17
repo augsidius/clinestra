@@ -1,0 +1,19 @@
+{
+  "pack_id": "home_care",
+  "name": "Home Care Management",
+  "description": "Scheduled home visits by a community care team.",
+  "version": "0.1.0",
+  "publisher": "Clinestra",
+  "licence": "Same as the library",
+  "clinical_review": "Not clinically reviewed. Review before use with patients.",
+  "definitions": [
+    "care_team_home_team.json",
+    "clinical_setting_home_service.json",
+    "note_page_home_visit_note.json",
+    "encounter_home_visit.json",
+    "journey_home_visit_flow.json",
+    "journal_plugin_home_daily_log.json",
+    "routine_home_visit_planning.json",
+    "task_home_escalation.json"
+  ]
+}

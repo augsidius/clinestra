@@ -1,0 +1,258 @@
+{
+  "def_kind": "assessment",
+  "key": "phq9",
+  "version": 1,
+  "name": "PHQ-9 Depression Severity",
+  "description": "Over the last 2 weeks",
+  "config": {
+    "assessment_type": "questionnaire",
+    "patient_reported": true,
+    "items": [
+      {
+        "param": "item_1",
+        "text": "Little interest or pleasure in doing things",
+        "options": [
+          {
+            "label": "Not at all",
+            "points": 0
+          },
+          {
+            "label": "Several days",
+            "points": 1
+          },
+          {
+            "label": "More than half the days",
+            "points": 2
+          },
+          {
+            "label": "Nearly every day",
+            "points": 3
+          }
+        ]
+      },
+      {
+        "param": "item_2",
+        "text": "Feeling down, depressed, or hopeless",
+        "options": [
+          {
+            "label": "Not at all",
+            "points": 0
+          },
+          {
+            "label": "Several days",
+            "points": 1
+          },
+          {
+            "label": "More than half the days",
+            "points": 2
+          },
+          {
+            "label": "Nearly every day",
+            "points": 3
+          }
+        ]
+      },
+      {
+        "param": "item_3",
+        "text": "Trouble falling or staying asleep, or sleeping too much",
+        "options": [
+          {
+            "label": "Not at all",
+            "points": 0
+          },
+          {
+            "label": "Several days",
+            "points": 1
+          },
+          {
+            "label": "More than half the days",
+            "points": 2
+          },
+          {
+            "label": "Nearly every day",
+            "points": 3
+          }
+        ]
+      },
+      {
+        "param": "item_4",
+        "text": "Feeling tired or having little energy",
+        "options": [
+          {
+            "label": "Not at all",
+            "points": 0
+          },
+          {
+            "label": "Several days",
+            "points": 1
+          },
+          {
+            "label": "More than half the days",
+            "points": 2
+          },
+          {
+            "label": "Nearly every day",
+            "points": 3
+          }
+        ]
+      },
+      {
+        "param": "item_5",
+        "text": "Poor appetite or overeating",
+        "options": [
+          {
+            "label": "Not at all",
+            "points": 0
+          },
+          {
+            "label": "Several days",
+            "points": 1
+          },
+          {
+            "label": "More than half the days",
+            "points": 2
+          },
+          {
+            "label": "Nearly every day",
+            "points": 3
+          }
+        ]
+      },
+      {
+        "param": "item_6",
+        "text": "Feeling bad about yourself, or that you are a failure or have let yourself or your family down",
+        "options": [
+          {
+            "label": "Not at all",
+            "points": 0
+          },
+          {
+            "label": "Several days",
+            "points": 1
+          },
+          {
+            "label": "More than half the days",
+            "points": 2
+          },
+          {
+            "label": "Nearly every day",
+            "points": 3
+          }
+        ]
+      },
+      {
+        "param": "item_7",
+        "text": "Trouble concentrating on things, such as reading the newspaper or watching television",
+        "options": [
+          {
+            "label": "Not at all",
+            "points": 0
+          },
+          {
+            "label": "Several days",
+            "points": 1
+          },
+          {
+            "label": "More than half the days",
+            "points": 2
+          },
+          {
+            "label": "Nearly every day",
+            "points": 3
+          }
+        ]
+      },
+      {
+        "param": "item_8",
+        "text": "Moving or speaking so slowly that other people could have noticed, or the opposite: being so fidgety or restless that you have been moving around a lot more than usual",
+        "options": [
+          {
+            "label": "Not at all",
+            "points": 0
+          },
+          {
+            "label": "Several days",
+            "points": 1
+          },
+          {
+            "label": "More than half the days",
+            "points": 2
+          },
+          {
+            "label": "Nearly every day",
+            "points": 3
+          }
+        ]
+      },
+      {
+        "param": "item_9",
+        "text": "Thoughts that you would be better off dead, or of hurting yourself in some way",
+        "options": [
+          {
+            "label": "Not at all",
+            "points": 0
+          },
+          {
+            "label": "Several days",
+            "points": 1
+          },
+          {
+            "label": "More than half the days",
+            "points": 2
+          },
+          {
+            "label": "Nearly every day",
+            "points": 3
+          }
+        ]
+      }
+    ],
+    "kernel": "weighted_point_sum",
+    "reference_rows": [
+      {
+        "min": 0,
+        "max": 4,
+        "band_label": "Minimal",
+        "text": "Minimal depression",
+        "grade": "A"
+      },
+      {
+        "min": 5,
+        "max": 9,
+        "band_label": "Mild",
+        "text": "Mild depression",
+        "grade": "A"
+      },
+      {
+        "min": 10,
+        "max": 14,
+        "band_label": "Moderate",
+        "text": "Moderate depression",
+        "grade": "A"
+      },
+      {
+        "min": 15,
+        "max": 19,
+        "band_label": "Moderately severe",
+        "text": "Moderately severe depression",
+        "grade": "A"
+      },
+      {
+        "min": 20,
+        "max": 27,
+        "band_label": "Severe",
+        "text": "Severe depression",
+        "grade": "A"
+      }
+    ],
+    "kernel_config": {
+      "max_score": 27,
+      "safety_items": [
+        "item_9"
+      ]
+    },
+    "observation_code": "phq9_score",
+    "lower_is_better": true,
+    "licence": "Free to use without permission (Pfizer). Item text may be carried."
+  }
+}

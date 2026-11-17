@@ -1,0 +1,21 @@
+{
+  "def_kind": "health_profile",
+  "key": "general",
+  "version": 1,
+  "name": "General",
+  "config": {
+    "profile_type": "general",
+    "tags": {
+      "measurements": [
+        "bp_systolic",
+        "bp_diastolic",
+        "pulse",
+        "weight",
+        "height",
+        "bmi",
+        "temperature",
+        "spo2"
+      ]
+    }
+  }
+}

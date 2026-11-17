@@ -1,0 +1,21 @@
+{
+  "def_kind": "clinical_setting",
+  "key": "surg_ward_unit",
+  "version": 1,
+  "name": "Surgical ward",
+  "config": {
+    "defaults": {
+      "name": "Surgical ward",
+      "setting_type": "ipd",
+      "services": [
+        "admission",
+        "operating_theatre",
+        "recovery",
+        "wound_care"
+      ],
+      "flags": {
+        "accepts_referrals": true
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "def_kind": "cohort",
+  "key": "cohort_mdd",
+  "version": 1,
+  "name": "Major Depressive Disorder",
+  "description": "Doctor-declared cohort for patients with a working diagnosis of MDD.",
+  "config": {
+    "manual_only": true,
+    "rule": "cond_mdd or cond_snomed_35489007",
+    "protocols": [
+      "proto_mdd_acute_phase"
+    ],
+    "entry_actions": [
+      {
+        "op": "create",
+        "kind": "health_profile",
+        "data": {
+          "definition_key": "mdd_profile",
+          "name": "Depression"
+        }
+      },
+      {
+        "op": "create",
+        "kind": "protocol_assignment",
+        "data": {
+          "protocol_key": "proto_mdd_acute_phase",
+          "cohort_membership_id": "$id",
+          "reason": "Entered MDD cohort"
+        },
+        "rationale": "Cohort surfaces its protocol"
+      }
+    ],
+    "exit_actions": []
+  }
+}

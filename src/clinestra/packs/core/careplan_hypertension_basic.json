@@ -1,0 +1,35 @@
+{
+  "def_kind": "careplan",
+  "key": "hypertension_basic",
+  "version": 1,
+  "name": "Hypertension: lifestyle and monitoring",
+  "config": {
+    "defaults": {
+      "title": "Hypertension plan"
+    },
+    "care_actions": [
+      {
+        "action_type": "journal",
+        "title": "Home BP twice a week",
+        "journal_plugin_key": "vitals_log",
+        "schedule": {
+          "every_days": 3
+        }
+      },
+      {
+        "action_type": "lifestyle",
+        "title": "Salt under 5 g/day"
+      },
+      {
+        "action_type": "education",
+        "title": "Why blood pressure matters"
+      }
+    ],
+    "tasks": [
+      {
+        "title": "Review home BP log at 4 weeks",
+        "assignee_role": "nurse"
+      }
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "def_kind": "task",
+  "key": "follow_up_call",
+  "version": 1,
+  "name": "Follow-up call",
+  "config": {
+    "defaults": {
+      "title": "Follow-up call",
+      "assignee_role": "coordinator",
+      "checklist": [
+        {
+          "item": "Side effects asked"
+        },
+        {
+          "item": "Adherence checked"
+        },
+        {
+          "item": "Next visit booked"
+        }
+      ]
+    }
+  }
+}

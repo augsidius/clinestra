@@ -1,0 +1,41 @@
+{
+  "def_kind": "care_team",
+  "key": "home_team",
+  "version": 1,
+  "name": "Home care team",
+  "config": {
+    "roles": [
+      {
+        "key": "primary",
+        "label": "Supervising doctor",
+        "person_kind": "provider",
+        "max": 1
+      },
+      {
+        "key": "home_nurse",
+        "label": "Home care nurse",
+        "person_kind": "care_team_member",
+        "skills": [
+          "vitals",
+          "wound_care"
+        ]
+      },
+      {
+        "key": "chw",
+        "label": "Community health worker",
+        "person_kind": "care_team_member",
+        "skills": [
+          "home_visit"
+        ]
+      },
+      {
+        "key": "coordinator",
+        "label": "Care coordinator",
+        "person_kind": "care_team_member",
+        "skills": [
+          "scheduling"
+        ]
+      }
+    ]
+  }
+}

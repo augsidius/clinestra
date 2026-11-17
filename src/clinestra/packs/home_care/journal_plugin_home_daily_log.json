@@ -1,0 +1,33 @@
+{
+  "def_kind": "journal_plugin",
+  "key": "home_daily_log",
+  "version": 1,
+  "name": "Daily home log",
+  "config": {
+    "fields": [
+      {
+        "key": "bp_systolic",
+        "label": "BP systolic",
+        "observation_code": "bp_systolic",
+        "unit": "mmHg"
+      },
+      {
+        "key": "bp_diastolic",
+        "label": "BP diastolic",
+        "observation_code": "bp_diastolic",
+        "unit": "mmHg"
+      },
+      {
+        "key": "temperature",
+        "label": "Temperature",
+        "observation_code": "temperature",
+        "unit": "°C"
+      },
+      {
+        "key": "notes",
+        "label": "Notes",
+        "field_type": "text"
+      }
+    ]
+  }
+}

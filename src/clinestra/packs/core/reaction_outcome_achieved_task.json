@@ -1,0 +1,20 @@
+{
+  "def_kind": "reaction",
+  "key": "outcome_achieved_task",
+  "version": 1,
+  "name": "Outcome achieved: tell the team",
+  "config": {
+    "when_kind": "outcome",
+    "when_state": "achieved",
+    "effects": [
+      {
+        "op": "create",
+        "kind": "task",
+        "data": {
+          "title": "Outcome achieved: review the careplan",
+          "assignee_role": "clinician"
+        }
+      }
+    ]
+  }
+}

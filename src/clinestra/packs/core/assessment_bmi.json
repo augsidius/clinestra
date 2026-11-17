@@ -1,0 +1,20 @@
+{
+  "def_kind": "assessment",
+  "key": "bmi",
+  "version": 1,
+  "name": "BMI calculator",
+  "config": {
+    "assessment_type": "calculator",
+    "kernel": "eval_reference_equation",
+    "kernel_config": {},
+    "observation_code": "bmi",
+    "reference_rows": [
+      {
+        "expression": "weight / (height / 100) ** 2",
+        "reference_range_low": 18.5,
+        "reference_range_high": 24.9,
+        "unit": "kg/m2"
+      }
+    ]
+  }
+}

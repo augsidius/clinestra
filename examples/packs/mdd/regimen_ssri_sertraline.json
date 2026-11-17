@@ -1,0 +1,34 @@
+{
+  "def_kind": "regimen",
+  "key": "ssri_sertraline",
+  "version": 1,
+  "name": "Sertraline first line",
+  "config": {
+    "defaults": {
+      "name": "Sertraline first line",
+      "regimen_type": "management",
+      "drugs": [
+        {
+          "code": "sertraline",
+          "display": "Sertraline",
+          "dose": "50mg",
+          "frequency": "OD",
+          "instructions": "Up to 200mg OD over 4-6 weeks"
+        }
+      ],
+      "orders": [
+        {
+          "code": "tsh",
+          "display": "TSH"
+        },
+        {
+          "code": "cbc",
+          "display": "CBC"
+        }
+      ]
+    },
+    "evidence": {
+      "grade": "A"
+    }
+  }
+}

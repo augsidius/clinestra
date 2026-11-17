@@ -1,0 +1,37 @@
+{
+  "def_kind": "reaction",
+  "key": "severe_phq9_flag",
+  "version": 1,
+  "name": "Severe PHQ-9 proposes a severe state",
+  "config": {
+    "when_kind": "assessment",
+    "when_state": "finalized",
+    "condition": "definition_key == 'phq9' and score >= 20",
+    "effects": [
+      {
+        "op": "create",
+        "kind": "clinical_state",
+        "data": {
+          "scope": "condition",
+          "condition_code": "mdd",
+          "state": "severe",
+          "basis": [
+            "$id"
+          ]
+        },
+        "rationale": "PHQ-9 in the severe band"
+      },
+      {
+        "op": "create",
+        "kind": "task",
+        "data": {
+          "title": "Severe PHQ-9: review within 24h",
+          "priority": "urgent",
+          "assignee_role": "clinician",
+          "target_kind": "assessment",
+          "target_id": "$id"
+        }
+      }
+    ]
+  }
+}

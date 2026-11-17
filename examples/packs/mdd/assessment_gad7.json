@@ -1,0 +1,205 @@
+{
+  "def_kind": "assessment",
+  "key": "gad7",
+  "version": 1,
+  "name": "GAD-7 Anxiety Severity",
+  "description": "Over the last 2 weeks",
+  "config": {
+    "assessment_type": "questionnaire",
+    "patient_reported": true,
+    "items": [
+      {
+        "param": "item_1",
+        "text": "Feeling nervous, anxious, or on edge",
+        "options": [
+          {
+            "label": "Not at all",
+            "points": 0
+          },
+          {
+            "label": "Several days",
+            "points": 1
+          },
+          {
+            "label": "More than half the days",
+            "points": 2
+          },
+          {
+            "label": "Nearly every day",
+            "points": 3
+          }
+        ]
+      },
+      {
+        "param": "item_2",
+        "text": "Not being able to stop or control worrying",
+        "options": [
+          {
+            "label": "Not at all",
+            "points": 0
+          },
+          {
+            "label": "Several days",
+            "points": 1
+          },
+          {
+            "label": "More than half the days",
+            "points": 2
+          },
+          {
+            "label": "Nearly every day",
+            "points": 3
+          }
+        ]
+      },
+      {
+        "param": "item_3",
+        "text": "Worrying too much about different things",
+        "options": [
+          {
+            "label": "Not at all",
+            "points": 0
+          },
+          {
+            "label": "Several days",
+            "points": 1
+          },
+          {
+            "label": "More than half the days",
+            "points": 2
+          },
+          {
+            "label": "Nearly every day",
+            "points": 3
+          }
+        ]
+      },
+      {
+        "param": "item_4",
+        "text": "Trouble relaxing",
+        "options": [
+          {
+            "label": "Not at all",
+            "points": 0
+          },
+          {
+            "label": "Several days",
+            "points": 1
+          },
+          {
+            "label": "More than half the days",
+            "points": 2
+          },
+          {
+            "label": "Nearly every day",
+            "points": 3
+          }
+        ]
+      },
+      {
+        "param": "item_5",
+        "text": "Being so restless that it is hard to sit still",
+        "options": [
+          {
+            "label": "Not at all",
+            "points": 0
+          },
+          {
+            "label": "Several days",
+            "points": 1
+          },
+          {
+            "label": "More than half the days",
+            "points": 2
+          },
+          {
+            "label": "Nearly every day",
+            "points": 3
+          }
+        ]
+      },
+      {
+        "param": "item_6",
+        "text": "Becoming easily annoyed or irritable",
+        "options": [
+          {
+            "label": "Not at all",
+            "points": 0
+          },
+          {
+            "label": "Several days",
+            "points": 1
+          },
+          {
+            "label": "More than half the days",
+            "points": 2
+          },
+          {
+            "label": "Nearly every day",
+            "points": 3
+          }
+        ]
+      },
+      {
+        "param": "item_7",
+        "text": "Feeling afraid, as if something awful might happen",
+        "options": [
+          {
+            "label": "Not at all",
+            "points": 0
+          },
+          {
+            "label": "Several days",
+            "points": 1
+          },
+          {
+            "label": "More than half the days",
+            "points": 2
+          },
+          {
+            "label": "Nearly every day",
+            "points": 3
+          }
+        ]
+      }
+    ],
+    "kernel": "weighted_point_sum",
+    "reference_rows": [
+      {
+        "min": 0,
+        "max": 4,
+        "band_label": "Minimal",
+        "text": "Minimal anxiety",
+        "grade": "A"
+      },
+      {
+        "min": 5,
+        "max": 9,
+        "band_label": "Mild",
+        "text": "Mild anxiety",
+        "grade": "A"
+      },
+      {
+        "min": 10,
+        "max": 14,
+        "band_label": "Moderate",
+        "text": "Moderate anxiety",
+        "grade": "A"
+      },
+      {
+        "min": 15,
+        "max": 21,
+        "band_label": "Severe",
+        "text": "Severe anxiety",
+        "grade": "A"
+      }
+    ],
+    "kernel_config": {
+      "max_score": 21,
+      "safety_items": []
+    },
+    "observation_code": "gad7_score",
+    "lower_is_better": true,
+    "licence": "Free to use without permission (Pfizer). Item text may be carried."
+  }
+}

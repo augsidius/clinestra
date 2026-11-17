@@ -1,0 +1,42 @@
+{
+  "def_kind": "note_page",
+  "key": "vitals_chart",
+  "version": 1,
+  "name": "Vitals chart",
+  "config": {
+    "page_type": "chart",
+    "chart": {
+      "component": "LineChart",
+      "query": {
+        "codes": [
+          "bp_systolic",
+          "bp_diastolic",
+          "pulse"
+        ]
+      }
+    },
+    "blocks": [
+      {
+        "key": "bp_systolic",
+        "label": "BP systolic",
+        "input_type": "number",
+        "observation_code": "bp_systolic",
+        "unit": "mmHg"
+      },
+      {
+        "key": "bp_diastolic",
+        "label": "BP diastolic",
+        "input_type": "number",
+        "observation_code": "bp_diastolic",
+        "unit": "mmHg"
+      },
+      {
+        "key": "pulse",
+        "label": "Pulse",
+        "input_type": "number",
+        "observation_code": "pulse",
+        "unit": "/min"
+      }
+    ]
+  }
+}

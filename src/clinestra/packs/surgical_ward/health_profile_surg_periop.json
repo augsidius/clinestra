@@ -1,0 +1,20 @@
+{
+  "def_kind": "health_profile",
+  "key": "surg_periop",
+  "version": 1,
+  "name": "Peri-operative",
+  "config": {
+    "profile_type": "episode",
+    "tags": {
+      "measurements": [
+        "bp_systolic",
+        "pulse",
+        "temperature",
+        "spo2",
+        "pain_score",
+        "wound_status"
+      ]
+    },
+    "ttl_days": 30
+  }
+}

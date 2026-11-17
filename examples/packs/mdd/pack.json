@@ -1,0 +1,20 @@
+{
+  "pack_id": "mdd",
+  "name": "Major Depressive Disorder — reference pack",
+  "version": "0.2.0",
+  "publisher": "Augsidius ( examples)",
+  "licence": "Example content for development. Not for clinical use without review.",
+  "definitions": [
+    "assessment_phq9.json",
+    "assessment_gad7.json",
+    "cohort_cohort_mdd.json",
+    "health_profile_mdd_profile.json",
+    "note_page_mdd_case_sheet.json",
+    "regimen_ssri_sertraline.json",
+    "regimen_ssri_escitalopram.json",
+    "journal_plugin_mood_diary.json",
+    "protocol_proto_mdd_acute_phase.json",
+    "journey_mdd_care_program.json",
+    "reaction_severe_phq9_flag.json"
+  ]
+}

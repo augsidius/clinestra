@@ -1,0 +1,14 @@
+{
+  "def_kind": "clinical_document",
+  "key": "prescription",
+  "version": 1,
+  "name": "Prescription",
+  "config": {
+    "doc_type": "prescription",
+    "header_html": "<header><h2>{clinic}</h2></header>",
+    "footer_html": "<footer>Signed electronically</footer>",
+    "shareable_with_patient": true,
+    "expires_after_days": 180,
+    "body_template": "<h1>Prescription</h1><p>Patient: {patient_name}</p><p>{block_assessment_plan}</p>"
+  }
+}

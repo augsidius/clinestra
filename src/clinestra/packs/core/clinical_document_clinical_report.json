@@ -1,0 +1,10 @@
+{
+  "def_kind": "clinical_document",
+  "key": "clinical_report",
+  "version": 1,
+  "name": "Clinical report",
+  "config": {
+    "doc_type": "clinical_report",
+    "shareable_with_patient": true
+  }
+}

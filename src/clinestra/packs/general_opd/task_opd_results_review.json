@@ -1,0 +1,23 @@
+{
+  "def_kind": "task",
+  "key": "opd_results_review",
+  "version": 1,
+  "name": "Review pending results",
+  "config": {
+    "defaults": {
+      "title": "Review pending results",
+      "assignee_role": "primary",
+      "checklist": [
+        {
+          "item": "Results received"
+        },
+        {
+          "item": "Results reviewed"
+        },
+        {
+          "item": "Patient informed"
+        }
+      ]
+    }
+  }
+}

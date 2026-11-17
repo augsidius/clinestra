@@ -1,0 +1,23 @@
+{
+  "pack_id": "medical_ward",
+  "name": "General Medical Ward Management",
+  "description": "Inpatient medical admissions from admission to discharge.",
+  "version": "0.1.0",
+  "publisher": "Clinestra",
+  "licence": "Same as the library",
+  "clinical_review": "Not clinically reviewed. Review before use with patients.",
+  "definitions": [
+    "care_team_ward_team.json",
+    "clinical_setting_ward_unit.json",
+    "note_page_ward_admission.json",
+    "note_page_ward_round.json",
+    "note_page_ward_obs.json",
+    "note_page_ward_discharge.json",
+    "encounter_ward_admission_episode.json",
+    "journey_ward_pathway.json",
+    "routine_ward_obs_round.json",
+    "routine_ward_doctor_round.json",
+    "task_ward_discharge_prep.json",
+    "clinical_document_ward_discharge_letter.json"
+  ]
+}

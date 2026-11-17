@@ -1,0 +1,24 @@
+{
+  "def_kind": "conversation",
+  "key": "clinician_copilot",
+  "version": 1,
+  "name": "Clinician copilot",
+  "config": {
+    "actor_role": "clinician",
+    "scope": "patient",
+    "structure": {
+      "sections": [
+        "summary",
+        "open_questions",
+        "suggested_actions"
+      ],
+      "tone": "concise, clinical",
+      "tools": [
+        "summarize_patient",
+        "fetch_clinical_data",
+        "fetch_evidence",
+        "extract_observations"
+      ]
+    }
+  }
+}

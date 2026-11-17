@@ -1,0 +1,48 @@
+{
+  "def_kind": "journey",
+  "key": "mdd_care_program",
+  "version": 1,
+  "name": "MDD care program",
+  "config": {
+    "states": [
+      "intake",
+      "active_treatment",
+      "monitoring",
+      "outcome",
+      "discharged"
+    ],
+    "initial": "intake",
+    "transitions": {
+      "intake": [
+        "active_treatment"
+      ],
+      "active_treatment": [
+        "monitoring"
+      ],
+      "monitoring": [
+        "active_treatment",
+        "outcome"
+      ],
+      "outcome": [
+        "discharged",
+        "monitoring"
+      ]
+    },
+    "terminal": [
+      "discharged"
+    ],
+    "association_type": "care_program",
+    "on_enter": {
+      "monitoring": [
+        {
+          "op": "create",
+          "kind": "task",
+          "data": {
+            "title": "Schedule monthly PHQ-9 review",
+            "assignee_role": "coordinator"
+          }
+        }
+      ]
+    }
+  }
+}

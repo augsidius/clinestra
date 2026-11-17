@@ -1,0 +1,30 @@
+{
+  "def_kind": "health_profile",
+  "key": "mdd_profile",
+  "version": 1,
+  "name": "Depression profile",
+  "config": {
+    "profile_type": "condition",
+    "tags": {
+      "conditions": [
+        "mdd"
+      ],
+      "measurements": [
+        "phq9_score",
+        "gad7_score",
+        "sleep_hours",
+        "mood_score"
+      ],
+      "medications": [
+        "sertraline",
+        "escitalopram"
+      ],
+      "outcomes": [
+        "phq9_score"
+      ]
+    },
+    "auto_for_conditions": [
+      "mdd"
+    ]
+  }
+}

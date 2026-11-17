@@ -1,0 +1,64 @@
+{
+  "def_kind": "note_page",
+  "key": "surg_checklist",
+  "version": 1,
+  "name": "Theatre safety checklist",
+  "config": {
+    "page_type": "case_sheet",
+    "blocks": [
+      {
+        "key": "identity_confirmed",
+        "label": "Patient identity confirmed",
+        "input_type": "boolean",
+        "required": true
+      },
+      {
+        "key": "procedure_confirmed",
+        "label": "Procedure and side confirmed",
+        "input_type": "boolean",
+        "required": true
+      },
+      {
+        "key": "consent_confirmed",
+        "label": "Signed consent present",
+        "input_type": "boolean",
+        "required": true
+      },
+      {
+        "key": "site_marked",
+        "label": "Site marked, where applicable",
+        "input_type": "boolean",
+        "required": true
+      },
+      {
+        "key": "allergies_reviewed",
+        "label": "Allergies reviewed",
+        "input_type": "boolean",
+        "required": true
+      },
+      {
+        "key": "team_introduced",
+        "label": "Team members confirmed",
+        "input_type": "boolean",
+        "required": true
+      },
+      {
+        "key": "counts_correct",
+        "label": "Instrument and swab counts correct",
+        "input_type": "boolean",
+        "required": true
+      },
+      {
+        "key": "specimens_labelled",
+        "label": "Specimens labelled, where applicable",
+        "input_type": "boolean",
+        "required": true
+      },
+      {
+        "key": "checklist_notes",
+        "label": "Notes",
+        "input_type": "narrative"
+      }
+    ]
+  }
+}

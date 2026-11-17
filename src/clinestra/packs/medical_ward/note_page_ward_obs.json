@@ -1,0 +1,69 @@
+{
+  "def_kind": "note_page",
+  "key": "ward_obs",
+  "version": 1,
+  "name": "Ward observations",
+  "config": {
+    "page_type": "chart",
+    "blocks": [
+      {
+        "key": "bp_systolic",
+        "label": "BP systolic",
+        "input_type": "number",
+        "observation_code": "bp_systolic",
+        "unit": "mmHg"
+      },
+      {
+        "key": "bp_diastolic",
+        "label": "BP diastolic",
+        "input_type": "number",
+        "observation_code": "bp_diastolic",
+        "unit": "mmHg"
+      },
+      {
+        "key": "pulse",
+        "label": "Pulse",
+        "input_type": "number",
+        "observation_code": "pulse",
+        "unit": "/min"
+      },
+      {
+        "key": "temperature",
+        "label": "Temperature",
+        "input_type": "number",
+        "observation_code": "temperature",
+        "unit": "°C"
+      },
+      {
+        "key": "resp_rate",
+        "label": "Respiratory rate",
+        "input_type": "number",
+        "observation_code": "resp_rate",
+        "unit": "/min"
+      },
+      {
+        "key": "spo2",
+        "label": "SpO2",
+        "input_type": "number",
+        "observation_code": "spo2",
+        "unit": "%"
+      },
+      {
+        "key": "nursing_note",
+        "label": "Nursing note",
+        "input_type": "narrative"
+      }
+    ],
+    "chart": {
+      "component": "LineChart",
+      "query": {
+        "codes": [
+          "bp_systolic",
+          "pulse",
+          "temperature",
+          "spo2"
+        ]
+      }
+    }
+  }
+}

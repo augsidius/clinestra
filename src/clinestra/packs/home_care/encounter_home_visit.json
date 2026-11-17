@@ -1,0 +1,18 @@
+{
+  "def_kind": "encounter",
+  "key": "home_visit",
+  "version": 1,
+  "name": "Home visit",
+  "config": {
+    "encounter_type": "home_visit",
+    "defaults": {
+      "encounter_type": "home_visit",
+      "duration_min": 45
+    },
+    "note_pages": [
+      "home_visit_note"
+    ],
+    "workflow": "home_visit_flow",
+    "default_duration_min": 45
+  }
+}

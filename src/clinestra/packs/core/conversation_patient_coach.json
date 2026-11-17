@@ -1,0 +1,21 @@
+{
+  "def_kind": "conversation",
+  "key": "patient_coach",
+  "version": 1,
+  "name": "Patient health coach",
+  "config": {
+    "actor_role": "patient",
+    "scope": "patient",
+    "structure": {
+      "sections": [
+        "check_in",
+        "education",
+        "journal_prompt"
+      ],
+      "tone": "warm, plain language, no diagnosis",
+      "tools": [
+        "fetch_clinical_data"
+      ]
+    }
+  }
+}

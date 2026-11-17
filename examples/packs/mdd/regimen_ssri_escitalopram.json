@@ -1,0 +1,24 @@
+{
+  "def_kind": "regimen",
+  "key": "ssri_escitalopram",
+  "version": 1,
+  "name": "Escitalopram first line",
+  "config": {
+    "defaults": {
+      "name": "Escitalopram first line",
+      "regimen_type": "management",
+      "drugs": [
+        {
+          "code": "escitalopram",
+          "display": "Escitalopram",
+          "dose": "10mg",
+          "frequency": "OD",
+          "instructions": "Up to 20mg OD"
+        }
+      ]
+    },
+    "evidence": {
+      "grade": "A"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "def_kind": "task",
+  "key": "surg_post_discharge_call",
+  "version": 1,
+  "name": "Post-discharge call",
+  "config": {
+    "defaults": {
+      "title": "Post-discharge call",
+      "assignee_role": "coordinator",
+      "checklist": [
+        {
+          "item": "Patient contacted"
+        },
+        {
+          "item": "Concerns escalated to surgical team"
+        }
+      ]
+    }
+  }
+}

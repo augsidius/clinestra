@@ -1,0 +1,58 @@
+{
+  "def_kind": "journey",
+  "key": "home_visit_flow",
+  "version": 1,
+  "name": "Home visit flow",
+  "config": {
+    "states": [
+      "scheduled",
+      "in_visit",
+      "completed"
+    ],
+    "initial": "scheduled",
+    "terminal": [
+      "completed"
+    ],
+    "association_type": "encounter",
+    "transitions": {
+      "scheduled": [
+        "in_visit"
+      ],
+      "in_visit": [
+        "completed"
+      ]
+    },
+    "stages": {
+      "scheduled": {
+        "label": "Scheduled",
+        "category": "todo"
+      },
+      "in_visit": {
+        "label": "In visit",
+        "category": "in_progress"
+      },
+      "completed": {
+        "label": "Completed",
+        "category": "done"
+      }
+    },
+    "requires": {
+      "in_visit": [
+        {
+          "kind": "note_page",
+          "state": "finalized",
+          "definition_key": "home_visit_note",
+          "label": "Visit note finalized"
+        }
+      ]
+    },
+    "advance_on": [
+      {
+        "when_kind": "note_page",
+        "when_state": "finalized",
+        "definition_key": "home_visit_note",
+        "to": "completed"
+      }
+    ]
+  }
+}

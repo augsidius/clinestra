@@ -1,0 +1,51 @@
+{
+  "def_kind": "note_page",
+  "key": "surg_discharge",
+  "version": 1,
+  "name": "Discharge summary",
+  "config": {
+    "page_type": "case_sheet",
+    "blocks": [
+      {
+        "key": "final_diagnosis",
+        "label": "Final diagnosis",
+        "input_type": "free_text",
+        "required": true
+      },
+      {
+        "key": "procedure_summary",
+        "label": "Procedure",
+        "input_type": "free_text",
+        "required": true
+      },
+      {
+        "key": "hospital_course",
+        "label": "Hospital course",
+        "input_type": "narrative",
+        "required": true
+      },
+      {
+        "key": "discharge_medications",
+        "label": "Discharge medications",
+        "input_type": "narrative"
+      },
+      {
+        "key": "wound_care",
+        "label": "Wound care instructions",
+        "input_type": "narrative"
+      },
+      {
+        "key": "return_advice",
+        "label": "When to seek care",
+        "input_type": "narrative",
+        "required": true
+      },
+      {
+        "key": "follow_up",
+        "label": "Follow-up",
+        "input_type": "free_text",
+        "required": true
+      }
+    ]
+  }
+}

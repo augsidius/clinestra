@@ -1,0 +1,39 @@
+{
+  "def_kind": "note_page",
+  "key": "surg_preop",
+  "version": 1,
+  "name": "Pre-operative assessment",
+  "config": {
+    "page_type": "case_sheet",
+    "blocks": [
+      {
+        "key": "anaesthesia_assessment",
+        "label": "Anaesthesia assessment",
+        "input_type": "narrative",
+        "required": true
+      },
+      {
+        "key": "anaesthesia_plan",
+        "label": "Planned anaesthesia",
+        "input_type": "choice",
+        "options": [
+          "general",
+          "regional",
+          "local",
+          "sedation"
+        ],
+        "required": true
+      },
+      {
+        "key": "investigations",
+        "label": "Investigations reviewed",
+        "input_type": "narrative"
+      },
+      {
+        "key": "preop_instructions",
+        "label": "Pre-operative instructions",
+        "input_type": "narrative"
+      }
+    ]
+  }
+}

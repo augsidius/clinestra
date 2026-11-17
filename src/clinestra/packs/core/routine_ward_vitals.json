@@ -1,0 +1,17 @@
+{
+  "def_kind": "routine",
+  "key": "ward_vitals",
+  "version": 1,
+  "name": "Ward vitals round",
+  "config": {
+    "defaults": {
+      "title": "Vitals round",
+      "assignee_role": "nurse",
+      "duty_state": "on_shift",
+      "schedule": {
+        "every_days": 1,
+        "grace_days": 0
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "def_kind": "task",
+  "key": "surg_preop_prep",
+  "version": 1,
+  "name": "Pre-operative preparation",
+  "config": {
+    "defaults": {
+      "title": "Pre-operative preparation",
+      "assignee_role": "ward_nurse",
+      "checklist": [
+        {
+          "item": "Consent form in chart"
+        },
+        {
+          "item": "Fasting instructions given"
+        },
+        {
+          "item": "Investigations in chart"
+        },
+        {
+          "item": "Theatre informed"
+        }
+      ]
+    }
+  }
+}

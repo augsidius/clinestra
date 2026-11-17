@@ -1,0 +1,23 @@
+{
+  "def_kind": "clinical_setting",
+  "key": "clinic",
+  "version": 1,
+  "name": "Outpatient clinic",
+  "config": {
+    "defaults": {
+      "name": "Outpatient clinic",
+      "setting_type": "opd",
+      "services": [
+        "consultation",
+        "tsh",
+        "cbc",
+        "ecg"
+      ],
+      "flags": {
+        "has_lab": true,
+        "has_pharmacy": false,
+        "accepts_referrals": true
+      }
+    }
+  }
+}

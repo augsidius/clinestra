@@ -1,0 +1,21 @@
+{
+  "pack_id": "general_opd",
+  "name": "General OPD Management",
+  "description": "Outpatient visits from check-in to checkout.",
+  "version": "0.1.0",
+  "publisher": "Clinestra",
+  "licence": "Same as the library",
+  "clinical_review": "Not clinically reviewed. Review before use with patients.",
+  "definitions": [
+    "care_team_opd_team.json",
+    "clinical_setting_opd_clinic.json",
+    "note_page_opd_triage.json",
+    "note_page_opd_consultation.json",
+    "encounter_opd_new_visit.json",
+    "encounter_opd_follow_up_visit.json",
+    "journey_opd_visit_flow.json",
+    "clinical_document_opd_visit_summary.json",
+    "task_opd_results_review.json",
+    "task_opd_follow_up_reminder.json"
+  ]
+}

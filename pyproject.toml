@@ -1,0 +1,48 @@
+[build-system]
+requires = ["hatchling>=1.18"]
+build-backend = "hatchling.build"
+
+[project]
+name = "clinestra"
+dynamic = ["version"]
+description = "Open-source harness for longitudinal clinical care: every concept around the patient with its rules, a generated FastAPI Clinical API, and scoped tools for AI agents."
+readme = "README.md"
+requires-python = ">=3.9"
+license = "AGPL-3.0-or-later"
+license-files = ["LICENSE", "LICENSE-NOTICE.md"]
+authors = [{ name = "Augsidius" }]
+keywords = ["healthcare", "clinical", "longitudinal care", "EHR", "care plans", "PROMs", "FastAPI"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Healthcare Industry",
+  "Programming Language :: Python :: 3",
+  "Framework :: FastAPI",
+  "Topic :: Scientific/Engineering :: Medical Science Apps.",
+]
+dependencies = ["pydantic>=2.5,<3"]
+
+[project.optional-dependencies]
+server = ["fastapi>=0.110", "uvicorn[standard]>=0.27", "python-multipart>=0.0.9"]
+# AI with the tenant's own keys (Claude on Anthropic/Bedrock/Vertex/Foundry), encrypted secrets, admin and patient portal
+ai = ["clinestra[server]", "anthropic>=1.0", "cryptography>=42", "httpx>=0.25"]
+postgres = ["psycopg[binary]>=3.1"]
+test = ["pytest>=7", "httpx>=0.25"]
+full = ["clinestra[server,ai,postgres]"]
+# Kept so existing install commands work: same as full.
+all = ["clinestra[full]"]
+dev = ["clinestra[full,test]", "build>=1", "twine>=5"]
+
+[project.scripts]
+clinestra = "clinestra.cli:main"
+
+[tool.hatch.version]
+path = "src/clinestra/_version.py"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/clinestra"]
+
+[tool.hatch.build.targets.sdist]
+include = ["src/clinestra", "docs", "examples", "tests", "scripts", "README.md", "LICENSE", "LICENSE-NOTICE.md", "SECURITY.md", "CHANGELOG.md", "pyproject.toml"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

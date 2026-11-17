@@ -1,0 +1,44 @@
+{
+  "def_kind": "note_page",
+  "key": "surg_admission",
+  "version": 1,
+  "name": "Surgical admission note",
+  "config": {
+    "page_type": "case_sheet",
+    "blocks": [
+      {
+        "key": "indication",
+        "label": "Indication for surgery",
+        "input_type": "narrative",
+        "required": true
+      },
+      {
+        "key": "planned_procedure",
+        "label": "Planned procedure",
+        "input_type": "free_text",
+        "required": true
+      },
+      {
+        "key": "history",
+        "label": "History",
+        "input_type": "narrative"
+      },
+      {
+        "key": "allergies",
+        "label": "Allergies",
+        "input_type": "free_text",
+        "required": true
+      },
+      {
+        "key": "current_medications",
+        "label": "Current medications",
+        "input_type": "narrative"
+      },
+      {
+        "key": "examination",
+        "label": "Examination",
+        "input_type": "narrative"
+      }
+    ]
+  }
+}

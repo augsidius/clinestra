@@ -1,0 +1,19 @@
+{
+  "def_kind": "encounter",
+  "key": "ward_admission_episode",
+  "version": 1,
+  "name": "Medical admission",
+  "config": {
+    "encounter_type": "admission",
+    "defaults": {
+      "encounter_type": "admission"
+    },
+    "note_pages": [
+      "ward_admission",
+      "ward_obs",
+      "ward_round",
+      "ward_discharge"
+    ],
+    "workflow": "ward_pathway"
+  }
+}

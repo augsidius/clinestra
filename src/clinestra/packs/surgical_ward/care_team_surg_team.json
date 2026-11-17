@@ -1,0 +1,59 @@
+{
+  "def_kind": "care_team",
+  "key": "surg_team",
+  "version": 1,
+  "name": "Surgical team",
+  "config": {
+    "roles": [
+      {
+        "key": "primary",
+        "label": "Operating surgeon",
+        "person_kind": "provider",
+        "max": 1
+      },
+      {
+        "key": "anaesthetist",
+        "label": "Anaesthetist",
+        "person_kind": "provider"
+      },
+      {
+        "key": "resident",
+        "label": "Surgical resident",
+        "person_kind": "provider"
+      },
+      {
+        "key": "ward_nurse",
+        "label": "Ward nurse",
+        "person_kind": "care_team_member",
+        "skills": [
+          "vitals",
+          "wound_care"
+        ]
+      },
+      {
+        "key": "ot_nurse",
+        "label": "Theatre nurse",
+        "person_kind": "care_team_member",
+        "skills": [
+          "theatre"
+        ]
+      },
+      {
+        "key": "physiotherapist",
+        "label": "Physiotherapist",
+        "person_kind": "care_team_member",
+        "skills": [
+          "mobilisation"
+        ]
+      },
+      {
+        "key": "coordinator",
+        "label": "Discharge coordinator",
+        "person_kind": "care_team_member",
+        "skills": [
+          "discharge"
+        ]
+      }
+    ]
+  }
+}

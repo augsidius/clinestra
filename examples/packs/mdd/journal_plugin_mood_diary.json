@@ -1,0 +1,28 @@
+{
+  "def_kind": "journal_plugin",
+  "key": "mood_diary",
+  "version": 1,
+  "name": "Mood diary",
+  "config": {
+    "fields": [
+      {
+        "key": "mood",
+        "label": "Mood (0-10)",
+        "field_type": "scale",
+        "observation_code": "mood_score"
+      },
+      {
+        "key": "sleep",
+        "label": "Hours slept",
+        "field_type": "number",
+        "observation_code": "sleep_hours",
+        "unit": "h"
+      },
+      {
+        "key": "note",
+        "label": "Anything else",
+        "field_type": "text"
+      }
+    ]
+  }
+}

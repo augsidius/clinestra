@@ -1,0 +1,136 @@
+{
+  "def_kind": "protocol",
+  "key": "proto_mdd_acute_phase",
+  "version": 1,
+  "name": "MDD — Acute Phase",
+  "description": "Toolkit surfaced when a patient is assigned to cohort_mdd. Every item below is optional and editable by the doctor at point of use.",
+  "config": {
+    "defaults": {
+      "title": "MDD acute phase plan"
+    },
+    "cohorts": [
+      "cohort_mdd"
+    ],
+    "pico": {
+      "population": "Adults with a clinician-declared working diagnosis of major depressive disorder (cohort_mdd)",
+      "intervention": "First-line SSRI and/or CBT per regimens",
+      "comparison": "Baseline PHQ-9 at enrolment",
+      "outcome": "Remission: PHQ-9 below 5 by week 8 to 12"
+    },
+    "evidence": [
+      {
+        "item": "TSH",
+        "grade": "B"
+      },
+      {
+        "item": "CBC",
+        "grade": null
+      }
+    ],
+    "templates": [
+      {
+        "kind": "careplan",
+        "data": {
+          "title": "MDD acute phase plan"
+        }
+      },
+      {
+        "kind": "assessment",
+        "definition_key": "phq9",
+        "data": {}
+      },
+      {
+        "kind": "assessment",
+        "definition_key": "gad7",
+        "data": {}
+      },
+      {
+        "kind": "care_action",
+        "data": {
+          "action_type": "order",
+          "title": "TSH",
+          "code": "tsh",
+          "details": {
+            "rationale": "rule out hypothyroid-driven depression"
+          }
+        }
+      },
+      {
+        "kind": "care_action",
+        "data": {
+          "action_type": "order",
+          "title": "CBC",
+          "code": "cbc"
+        }
+      },
+      {
+        "kind": "care_action",
+        "data": {
+          "action_type": "journal",
+          "title": "Daily mood diary",
+          "journal_plugin_key": "mood_diary",
+          "schedule": {
+            "every_days": 1,
+            "grace_days": 1
+          }
+        }
+      },
+      {
+        "kind": "care_action",
+        "data": {
+          "action_type": "education",
+          "title": "Understanding depression",
+          "details": {
+            "points": [
+              "Depression is a treatable medical condition",
+              "Medicines take 2-4 weeks; do not stop early",
+              "Contact the clinic the same day if suicidal thoughts worsen"
+            ]
+          }
+        }
+      },
+      {
+        "kind": "care_action",
+        "data": {
+          "action_type": "self_care",
+          "title": "Behavioural activation: one planned activity a day",
+          "schedule": {
+            "every_days": 1
+          }
+        }
+      },
+      {
+        "kind": "regimen",
+        "definition_key": "ssri_sertraline",
+        "data": {}
+      },
+      {
+        "kind": "outcome",
+        "data": {
+          "name": "Remission (PHQ-9 < 5)",
+          "outcome_type": "patient_reported",
+          "perceived_by": "patient",
+          "condition_code": "mdd",
+          "measure_code": "phq9_score",
+          "comparator": "<",
+          "target": 5,
+          "on_achieved_state": "remission"
+        }
+      },
+      {
+        "kind": "task",
+        "data": {
+          "title": "Follow-up call at week 2 (side effects, adherence)",
+          "assignee_role": "nurse"
+        }
+      },
+      {
+        "kind": "journey",
+        "definition_key": "mdd_care_program",
+        "data": {
+          "association_type": "care_program"
+        }
+      }
+    ]
+  }
+}

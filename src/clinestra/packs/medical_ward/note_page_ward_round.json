@@ -1,0 +1,23 @@
+{
+  "def_kind": "note_page",
+  "key": "ward_round",
+  "version": 1,
+  "name": "Ward round note",
+  "config": {
+    "page_type": "case_sheet",
+    "blocks": [
+      {
+        "key": "progress",
+        "label": "Progress",
+        "input_type": "narrative",
+        "required": true
+      },
+      {
+        "key": "plan_today",
+        "label": "Plan for today",
+        "input_type": "narrative",
+        "required": true
+      }
+    ]
+  }
+}

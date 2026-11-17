@@ -1,0 +1,19 @@
+{
+  "def_kind": "encounter",
+  "key": "opd_follow_up_visit",
+  "version": 1,
+  "name": "Follow-up OPD visit",
+  "config": {
+    "encounter_type": "opd_follow_up",
+    "defaults": {
+      "encounter_type": "opd_follow_up",
+      "duration_min": 10
+    },
+    "note_pages": [
+      "opd_triage",
+      "opd_consultation"
+    ],
+    "workflow": "opd_visit_flow",
+    "default_duration_min": 10
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "def_kind": "care_team",
+  "key": "ward_team",
+  "version": 1,
+  "name": "Ward team",
+  "config": {
+    "roles": [
+      {
+        "key": "primary",
+        "label": "Admitting physician",
+        "person_kind": "provider",
+        "max": 1
+      },
+      {
+        "key": "resident",
+        "label": "Resident doctor",
+        "person_kind": "provider"
+      },
+      {
+        "key": "ward_nurse",
+        "label": "Ward nurse",
+        "person_kind": "care_team_member",
+        "skills": [
+          "vitals",
+          "medication_round"
+        ]
+      },
+      {
+        "key": "coordinator",
+        "label": "Discharge coordinator",
+        "person_kind": "care_team_member",
+        "skills": [
+          "discharge"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "def_kind": "care_team",
+  "key": "standard",
+  "version": 1,
+  "name": "Standard care team",
+  "config": {
+    "roles": [
+      {
+        "key": "primary",
+        "label": "Primary care provider",
+        "person_kind": "provider",
+        "max": 1
+      },
+      {
+        "key": "consultant",
+        "label": "Consulting specialist",
+        "person_kind": "provider"
+      },
+      {
+        "key": "nurse",
+        "label": "Nurse",
+        "skills": [
+          "vitals",
+          "education"
+        ]
+      },
+      {
+        "key": "coordinator",
+        "label": "Care coordinator",
+        "skills": [
+          "scheduling",
+          "follow_up"
+        ]
+      },
+      {
+        "key": "chw",
+        "label": "Community health worker",
+        "skills": [
+          "home_visit"
+        ]
+      },
+      {
+        "key": "dietitian",
+        "label": "Dietitian",
+        "skills": [
+          "diet_chart"
+        ]
+      }
+    ]
+  }
+}

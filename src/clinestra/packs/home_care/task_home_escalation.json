@@ -1,0 +1,24 @@
+{
+  "def_kind": "task",
+  "key": "home_escalation",
+  "version": 1,
+  "name": "Escalate to supervising doctor",
+  "config": {
+    "defaults": {
+      "title": "Escalate to supervising doctor",
+      "assignee_role": "home_nurse",
+      "checklist": [
+        {
+          "item": "Concern documented"
+        },
+        {
+          "item": "Doctor informed"
+        },
+        {
+          "item": "Plan recorded"
+        }
+      ],
+      "priority": "high"
+    }
+  }
+}
